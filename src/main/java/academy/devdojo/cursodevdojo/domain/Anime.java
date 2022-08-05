@@ -1,21 +1,11 @@
 package academy.devdojo.cursodevdojo.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data //gera getters, setters, equals and hashcodes
+@AllArgsConstructor
 public class Anime {
-
+    private Long id;
     private String name;
-
-    public Anime(String name) {
-        this.name = name;
-    }
-
-    public Anime() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
