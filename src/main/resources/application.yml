@@ -1,3 +1,13 @@
 server:
   error:
     include-stacktrace: on_param
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/DevDojo?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: root
+    password: 123mysql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
