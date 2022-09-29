@@ -23,9 +23,9 @@ public class SpringClient {
 
         //Listar animes
         ResponseEntity<List<Anime>> animes = new RestTemplate().exchange("http://localhost:8080/animes/all",
-                                                                            HttpMethod.GET,
-                                                                null,
-                                                                            new ParameterizedTypeReference<List<Anime>>() {});
+                                                                        HttpMethod.GET,
+                                                                        null,
+                                                                        new ParameterizedTypeReference<List<Anime>>() {});
         log.info(animes);
 
         //Inserir animes
