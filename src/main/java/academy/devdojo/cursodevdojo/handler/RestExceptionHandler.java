@@ -69,41 +69,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(exceptionDetails, headers, status);
     }
 
-    /*@Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 
-        List<FieldError> fieldErrors = ex.getBindingResult().getFieldErrors();
-
-        //Recebe os campos inválidos
-        String fields = fieldErrors.stream().map(FieldError::getField).collect(Collectors.joining(", "));
-        //Recebe as mensagens a respeito dos campos inválidos
-        String fieldsMessage = fieldErrors.stream().map(FieldError::getDefaultMessage).collect(Collectors.joining(", "));
-
-        return new ResponseEntity<>(
-                ValidationExceptionDetails.builder()
-                        .title("Bad Request Exception, Invalid Fields")
-                        .status(HttpStatus.BAD_REQUEST.value())
-                        .details(ex.getMessage())
-                        .developerMessage(ex.getClass().getName())
-                        .timestamp(LocalDateTime.now())
-                        .fields(fields)
-                        .fieldsMessage(fieldsMessage)
-                        .build(), HttpStatus.BAD_REQUEST);
-    }
-
-    @Override
-    protected ResponseEntity<Object> handleExceptionInternal(Exception ex, @Nullable Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
-
-        ExceptionDetails exceptionDetails = ExceptionDetails.builder()
-                .title(ex.getCause().getMessage())
-                .status(status.value())
-                .details(ex.getMessage())
-                .developerMessage(ex.getClass().getName())
-                .timestamp(LocalDateTime.now())
-                .build();
-
-        return new ResponseEntity<>(exceptionDetails, headers, status);
-    }*/
 }
 
 
